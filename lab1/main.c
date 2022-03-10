@@ -74,12 +74,9 @@ int main() {
 
     FILE* id;
     id = fopen("operator_id.bin", "w+");
-    int user = 0;
-
-    for (int i = 0; i < 6; i++) {
-        fprintf(id, "user_id: 0000%d\n", user);
-        user++;
-    }
+    
+    fprintf(id, "user_id[0000%d]", sid);
+    
     fclose(id);
 
     FILE* fp;
