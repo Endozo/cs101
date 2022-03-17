@@ -138,7 +138,7 @@ int main() {
     fprintf(file, "Receipt Now: %d\n", yourlotto.lotto_receipt);
     fprintf(file, "User ID: %d\n", yourlotto.emp_id);
     fprintf(file, "Date today: %s\n", yourlotto.lotto_date);
-    fprintf(file, "Time Now: %s", yourlotto.lotto_time);
+    fprintf(file, "Time Now: %s\n", yourlotto.lotto_time);
 
 
     fclose(file);
