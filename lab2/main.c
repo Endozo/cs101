@@ -6,8 +6,8 @@ typedef struct lotto {
     int lotto_no;
     int lotto_receipt;
     int emp_id;
-    char lotto_date[8];
-    char lotto_time[8];
+    char lotto_date[100];
+    char lotto_time[100];
 } lotto_record_t;
 
 int main() {
@@ -138,7 +138,8 @@ int main() {
     fprintf(file, "Receipt Now: %d\n", yourlotto.lotto_receipt);
     fprintf(file, "User ID: %d\n", yourlotto.emp_id);
     fprintf(file, "Date today: %s\n", yourlotto.lotto_date);
-    fprintf(file, "Time NOW: %s\n", yourlotto.lotto_time);
+    fprintf(file, "Time Now: %s", yourlotto.lotto_time);
+
 
     fclose(file);
 
