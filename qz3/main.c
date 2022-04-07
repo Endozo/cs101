@@ -10,6 +10,7 @@ void rec_dec(char* s) {
 void hanoi_tower(int level, char A, char B, char C) {
 	FILE* fp;
 	fopen(fp, "hanoi.txt", "w+");
+	fprintf("hanoi tower\n", fp);
 
 	if (level == 1) {
 		fprintf("Move disk %d from %c to %c\n",level, A, C, fp);
@@ -37,7 +38,7 @@ int multiplication(int i, int j) {
 int main() {
 	char s[] = "1234567890";
 
-	//rec_dec(s);
+	rec_dec(s);
 	printf("func#1----------------------------------\n");
 	hanoi_tower(16, 'A', 'B', 'C');
 	printf("func#2----------------------------------\n");
