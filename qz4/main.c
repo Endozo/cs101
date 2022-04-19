@@ -31,10 +31,9 @@ void printArray(int a[], int size) {
 
 char* copy_string(char* s) {
     char* str = (char*)calloc(*s, sizeof(char));
-
     str = s;
-
     return str;
+    free(str);
 }
 
 
@@ -59,8 +58,6 @@ int main() {
     printArray(dest, size);
     printf("No.3---------------\n");
     printf("copy string = %s\n", cp_str);
-    free(cp_str);
-    cp_str = NULL;
-
+    
     return 0;
 }
