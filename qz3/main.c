@@ -1,26 +1,31 @@
 #include<stdio.h>
 
+FILE* hanoi;
+
 void rec_dec(char* s) {
 	while(*s) {
 		printf("%c", *s);
 		s++;
 	}
+	printf("\n");
 }
 
-void hanoi_tower(int level, char A, char B, char C) {
-	FILE* fp;
-	fopen(fp, "hanoi.txt", "w+");
-	fprintf("hanoi tower\n", fp);
-
-	if (level == 1) {
-		fprintf("Move disk %d from %c to %c\n",level, A, C, fp);
-	} else {
-		hanoi_tower(level - 1, A, C, B);
-		hanoi_tower(1, A, B, C);
-		hanoi_tower(level - 1, B, A, C);
-	}
-
-	fclose(fp);
+void hanoi_tower(int n, char A , char B, char C) 
+{    
+    if(n == 1) 
+    {         
+        hanoi = fopen("hanoi.txt", "a+");
+        fprintf(hanoi,"Move disk %d from %c to %c\n", n, A, C);  
+        fclose(hanoi);
+    }    
+    else 
+    {        
+        hanoi_tower(n-1, A, C, B);       
+        hanoi = fopen("hanoi.txt", "a+");
+        fprintf(hanoi,"Move disk %d from %c to %c\n", n, A, C);        
+        fclose(hanoi);
+        hanoi_tower(n-1, B, A, C);
+     }
 }
 
 int multiplication(int i, int j) {
