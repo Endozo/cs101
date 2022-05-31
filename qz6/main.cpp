@@ -30,9 +30,9 @@ class StandardClock : Clock {
         };
         void display (void) {
             if (meridian[0] == 'A') {
-                cout << "¤W¤È " << hour << ":" << minute << ":" << second << endl;
+                cout << "上午 " << hour << ":" << minute << ":" << second << endl;
             } else if (meridian[0] == 'P') {
-                cout << "¤U¤È " << hour << ":" << minute << ":" << second << endl;
+                cout << "下午 " << hour << ":" << minute << ":" << second << endl;
             }
         }
 };
