@@ -6,7 +6,7 @@ typedef struct LinkedList{
     struct LinkedList *next;
 }LinkedList;
 
-LinkedList* allocNode(int data){    // creat a new node
+LinkedList* allocNode(int data){
     LinkedList* new = (LinkedList*)malloc(sizeof(LinkedList*));
     new -> data = data;
     new -> next = NULL;
